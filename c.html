@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="relative flex flex-col items-center bg-gray-100 p-6 rounded-lg shadow-lg w-64">
+        <!-- ব্যাকগ্রাউন্ড সার্কেল (ছবির নিচে থাকবে) -->
+        <div class="absolute -top-8 w-20 h-20 bg-red-500 rounded-full"></div>
+    
+        <!-- ছবিটি ব্যাকগ্রাউন্ড সার্কেলের উপরে আনতে -->
+        <img src="image.jpg" alt="Icon" class="w-16 h-16 rounded-full relative z-10">
+        
+        <!-- টাইটেল ও লেখা -->
+        <h3 class="mt-4 font-bold text-lg">24/7 Services</h3>
+        <p class="text-gray-600 text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    </div>
+</html>
