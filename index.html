@@ -26,23 +26,55 @@
         .font-sora {
         font-family: "Sora", serif;
         }
-    </style>
-</head>
-<body class="font-sora w-full">
-    <header class="bg-gradient-to-t from-[#EFEBE3] to-[#FFFFFF]">
-        <nav class="flex justify-between w-11/12 mx-auto mt-10">
-            <img src="./c2-assets/logo-header.png" alt="">
-            <ul class="flex gap-6 pl-80">
-                <li><a href="">Product</a></li>
-                <li><a href="">Services</a></li>
-                <li><a href="">Contact us</a></li>
-            </ul>
 
-            <div class="pl-96 mt-3">
+        /* Color change animation */
+        @keyframes colorChange {
+            0% {
+                color: #4CAF50; /* Green color */
+            }
+            50% {
+                color: #FF6347; /* Tomato color */
+            }
+            100% {
+                color: #4CAF50; /* Green color */
+            }
+
+        }
+
+        .animation {
+            animation: colorChange 4s ease-in-out infinite;
+        }
+    </style>
+
+</head>
+<body class="font-sora">
+    <header class="bg-gradient-to-t from-[#EFEBE3] to-[#FFFFFF]">
+        <nav class="flex justify-between mt-10">
+            <!-- sm -->
+            <div class="block lg:hidden">
+                <div class="flex">
+                <img src="img/Group.png" alt="">
+
+                <i class="fa-solid fa-bars text-4xl text-[#179800] ml-72"></i>
+                </div>
+                <div class="border border-t-[#179800] mt-2"></div>
+            </div>
+
+            <!-- lg -->
+            <img class="hidden lg:block" src="./c2-assets/logo-header.png" alt="">
+            <div class="hidden lg:block">
+                <ul class="flex gap-6 pl-80">
+                    <li><a href="">Product</a></li>
+                    <li><a href="">Services</a></li>
+                    <li><a href="">Contact us</a></li>
+                </ul>
+            </div>
+
+            <div class="pl-96 mt-3 hidden lg:block">
                 <i class="fa-solid fa-magnifying-glass"></i>
                 <i class="fa-solid fa-cart-shopping"></i>
             </div>
-            <div>
+            <div class="hidden lg:block">
                 <button class="btn btn-outline btn-success">Login</button>
                 <button class="btn btn-success text-white">Register</button>
             </div>
@@ -50,20 +82,24 @@
         <!-- banner -->
         <section class="mt-20 w-11/12 mx-auto flex flex-col">
             <div class="text-center">
-                <h1 class="text-5xl font-bold leading-tight">Freshness <span class="text-[#179800]">You Can<br>Count</span> On, Prices You’ll Love!</h1>
-                <p class="mt-3 opacity-80">Shop your daily essentials at unbeatable prices. From fresh produce to pantry <br> staples, we’ve got you covered every day!</p>
+                <h1 class="text-xl lg:text-5xl font-bold leading-tight">Freshness <span class="text-[#179800] animation">You Can<br>Count</span> On, Prices You’ll Love!</h1>
+                <p class="mt-3 opacity-80 hidden lg:block">Shop your daily essentials at unbeatable prices. From fresh produce to pantry <br> staples, we’ve got you covered every day!</p>
+                <p class="mt-3 opacity-80 block lg:hidden">Shop your daily essentials at unbeatable prices. <br> From fresh produce to pantry <br> staples, we’ve got you covered every day!</p>
+                
+
+
             </div>
             <div class="flex justify-center">
-                <img class="max-w-xl mt-3" src="./c2-assets/hero-vegetables.png" alt="">
+                <img class="lg:max-w-xl mt-3" src="./c2-assets/hero-vegetables.png" alt="">
             </div>
         </section>
     </header>
 
     <main>
         <!-- Services -->
-         <section class="mt-20 lg:max-w-screen-xl mx-auto">
+         <section class="mt-20 w-11/12  mx-auto">
             <h3 class="text-[#179800] text-3xl font-bold">Services</h3>
-            <div class=" mt-7 flex justify-between gap-4">
+            <div class=" mt-7 flex justify-between flex-col lg:flex-row gap-4">
                 <!-- card 1 -->
                 <div class="text-center bg-[#EFEBE3] w-96 p-10 rounded-2xl relative">
                     <div class="flex justify-center">
@@ -75,7 +111,7 @@
                     <!-- text -->
                     <div class="mt-10">
                         <h4 class="font-bold text-xl">24/7 Services</h4>
-                        <p class="mt-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt</p>
+                        <p class="mt-3">Available to ensure that customers can <br> enjoy fresh and delicious food at <br> any time of the day or night.</p>
                     </div>
                 </div> 
                 <!-- card 2 -->
@@ -89,7 +125,7 @@
                     <!-- text -->
                     <div class="mt-10">
                         <h4 class="font-bold text-xl">Fast Delivery</h4>
-                        <p class="mt-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt</p>
+                        <p class="mt-3">Fast delivery ensures that your food <br> arrives quickly and fresh, so you <br> can enjoy it at its best.</p>
                     </div>
                 </div> 
                 <!-- card 3 -->
@@ -103,276 +139,321 @@
                     <!-- text -->
                     <div class="mt-10">
                         <h4 class="font-bold text-xl">Healthy Products</h4>
-                        <p class="mt-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt</p>
+                        <p class="mt-3">Healthy products are prioritized, offering <br> a range made with fresh, natural <br> ingredients.
                     </div>
                 </div> 
-
-
+    
+    
             </div>
          </section>
-
+    
         <!-- Popular Products -->
         <section class="bg-[#EFEBE3]">
-            <div class="pt-20 mt-32 lg:max-w-screen-xl mx-auto">
-                <h1 class="text-[#179800] text-3xl font-bold">Popular Products</h1>
-                <div class="flex justify-between">
-                    <!-- big card -->
-                        <div class="bg-gradient-to-r from-green-400 to-green-200 p-10 mt-10 relative w-96 h-80 rounded-2xl mb-11">
+            <div class="pt-20 pb-10 mt-32 w-11/12 mx-auto">
+                <h1 class="text-[#179800] text-3xl font-bold mb-10">Popular Products</h1>
+                <div class="flex justify-between gap-4 mb-20 flex-col lg:flex-row">
+                    <!-- large card -->
+                        <div class="bg-gradient-to-r from-green-400 to-green-200 p-10 relative w-96 h-96 mb-5 rounded-2xl">
                             <h3 class="text-white text-2xl font-bold">30% off</h3>
-                            <p class="mt-2">Discover a world of trends, toy, and <br> essentials handpicked for</p>
-                            <button class="btn bg-white mt-2">Buy Now</button>
-                            <img class="absolute top-32 left-40 w-52" src="c2-assets/vegetable-offer.png" alt="">
+                            <p class="mt-3">Discover a world of trends, toy, and <br> essentials handpicked for</p>
+                            <button class="btn bg-white mt-3">Buy Now</button>
+                            <img class="absolute -mt-1 top-48 left-40 w-52" src="c2-assets/vegetable-offer.png" alt="">
                          </div>
-
+    
                      <!-- some little card -->
-                      <div class="grid grid-cols-3 flex-1 gap-4">
+                      <div class="grid lg:grid-cols-3 grid-cols-2 flex-1 gap-4 ">
+                        <!-- card 1 -->
                         <div  class="bg-white rounded-xl h-24">
-                            <!-- card 1 -->      
                             <div class=" rounded-2xl relative flex gap-6 px-2 py-3">
                                 <div class="flex pl-1">
                                 <!-- white circle -->
                                  <div class="absolute rounded-2xl mt-1 bg-[#EFEBE3] w-16 h-16"></div>
                                 <!-- images -->
                                  <div>
-                                    <img class="relative w-11  top-3 left-3" src="./c2-assets/service.png" alt="">
+                                    <img class="relative w-11  top-3 left-3" src="./c2-assets/onion.png" alt="">
                                 </div>
                             </div> 
                             <!-- text -->
-                            <div class="mt-1">
-                                <i class="fa-solid fa-star text-orange-300 text-xs"></i>
-                                <p class="text-xs">Onion 1 KG</p>
+                            <div class="mt-2">
+                                <div class="flex gap-2">
+                                    <i class="fa-solid fa-star text-orange-300 text-xs"></i>
+                                    <p class="text-xs">4.5</p>
+                                </div>
+                                
+                                <p class="text-xs font-bold">Onion 1 KG</p>
                                 <p class="text-xs">$39.99</p>
                             </div>
                         </div>
                         </div>
-
+    
+  
+                        <!-- card 2 -->
                         <div  class="bg-white rounded-xl h-24">
-                            <!-- card 1 -->
                             <div class=" rounded-2xl relative flex gap-6 px-2 py-3">
                                 <div class="flex pl-1">
                                 <!-- white circle -->
                                  <div class="absolute rounded-2xl mt-1 bg-[#EFEBE3] w-16 h-16"></div>
                                 <!-- images -->
                                  <div>
-                                    <img class="relative w-11  top-3 left-3" src="./c2-assets/service.png" alt="">
+                                    <img class="relative w-11  top-3 left-3" src="./c2-assets/tomato.png" alt="">
                                 </div>
                             </div> 
                             <!-- text -->
-                            <div class="mt-1">
-                                <i class="fa-solid fa-star text-orange-300 text-xs"></i>
-                                <p class="text-xs">Onion 1 KG</p>
+                            <div class="mt-2">
+                                <div class="flex gap-2">
+                                    <i class="fa-solid fa-star text-orange-300 text-xs"></i>
+                                    <p class="text-xs">4.5</p>
+                                </div>
+                                
+                                <p class="text-xs font-bold">Tomato 500 g </p>
                                 <p class="text-xs">$39.99</p>
                             </div>
                         </div>
                         </div>
-
+    
+  
+                        <!-- card 3 -->
                         <div  class="bg-white rounded-xl h-24">
-                            <!-- card 1 -->
                             <div class=" rounded-2xl relative flex gap-6 px-2 py-3">
                                 <div class="flex pl-1">
                                 <!-- white circle -->
                                  <div class="absolute rounded-2xl mt-1 bg-[#EFEBE3] w-16 h-16"></div>
                                 <!-- images -->
                                  <div>
-                                    <img class="relative w-11  top-3 left-3" src="./c2-assets/service.png" alt="">
+                                    <img class="relative w-11  top-3 left-3" src="./c2-assets/potato.png" alt="">
                                 </div>
                             </div> 
                             <!-- text -->
-                            <div class="mt-1">
-                                <i class="fa-solid fa-star text-orange-300 text-xs"></i>
-                                <p class="text-xs">Onion 1 KG</p>
+                            <div class="mt-2">
+                                <div class="flex gap-2">
+                                    <i class="fa-solid fa-star text-orange-300 text-xs"></i>
+                                    <p class="text-xs">4.5</p>
+                                </div>
+                                
+                                <p class="text-xs font-bold">Potato 1 KG</p>
                                 <p class="text-xs">$39.99</p>
                             </div>
                         </div>
                         </div>
-
+    
+  
+                        <!-- card 4 -->
                         <div  class="bg-white rounded-xl h-24">
-                            <!-- card 1 -->
                             <div class=" rounded-2xl relative flex gap-6 px-2 py-3">
                                 <div class="flex pl-1">
                                 <!-- white circle -->
                                  <div class="absolute rounded-2xl mt-1 bg-[#EFEBE3] w-16 h-16"></div>
                                 <!-- images -->
                                  <div>
-                                    <img class="relative w-11  top-3 left-3" src="./c2-assets/service.png" alt="">
+                                    <img class="relative w-11  top-3 left-3" src="./c2-assets/tomato.png" alt="">
                                 </div>
                             </div> 
                             <!-- text -->
-                            <div class="mt-1">
-                                <i class="fa-solid fa-star text-orange-300 text-xs"></i>
-                                <p class="text-xs">Onion 1 KG</p>
+                            <div class="mt-2">
+                                <div class="flex gap-2">
+                                    <i class="fa-solid fa-star text-orange-300 text-xs"></i>
+                                    <p class="text-xs">4.5</p>
+                                </div>
+                                
+                                <p class="text-xs font-bold">Tomato 500 g </p>
                                 <p class="text-xs">$39.99</p>
                             </div>
                         </div>
                         </div>
-
+    
+  
+                        <!-- card 5 -->
                         <div  class="bg-white rounded-xl h-24">
-                            <!-- card 1 -->
                             <div class=" rounded-2xl relative flex gap-6 px-2 py-3">
                                 <div class="flex pl-1">
                                 <!-- white circle -->
                                  <div class="absolute rounded-2xl mt-1 bg-[#EFEBE3] w-16 h-16"></div>
                                 <!-- images -->
                                  <div>
-                                    <img class="relative w-11  top-3 left-3" src="./c2-assets/service.png" alt="">
+                                    <img class="relative w-11  top-3 left-3" src="./c2-assets/onion.png" alt="">
                                 </div>
                             </div> 
                             <!-- text -->
-                            <div class="mt-1">
-                                <i class="fa-solid fa-star text-orange-300 text-xs"></i>
-                                <p class="text-xs">Onion 1 KG</p>
+                            <div class="mt-2">
+                                <div class="flex gap-2">
+                                    <i class="fa-solid fa-star text-orange-300 text-xs"></i>
+                                    <p class="text-xs">4.5</p>
+                                </div>
+                                
+                                <p class="text-xs font-bold">Onion 1 KG</p>
                                 <p class="text-xs">$39.99</p>
                             </div>
                         </div>
                         </div>
-
+    
+  
+                        <!-- card 6 -->
                         <div  class="bg-white rounded-xl h-24">
-                            <!-- card 1 -->
                             <div class=" rounded-2xl relative flex gap-6 px-2 py-3">
                                 <div class="flex pl-1">
                                 <!-- white circle -->
                                  <div class="absolute rounded-2xl mt-1 bg-[#EFEBE3] w-16 h-16"></div>
                                 <!-- images -->
                                  <div>
-                                    <img class="relative w-11  top-3 left-3" src="./c2-assets/service.png" alt="">
+                                    <img class="relative w-11  top-3 left-3" src="./c2-assets/tomato.png" alt="">
                                 </div>
                             </div> 
                             <!-- text -->
-                            <div class="mt-1">
-                                <i class="fa-solid fa-star text-orange-300 text-xs"></i>
-                                <p class="text-xs">Onion 1 KG</p>
+                            <div class="mt-2">
+                                <div class="flex gap-2">
+                                    <i class="fa-solid fa-star text-orange-300 text-xs"></i>
+                                    <p class="text-xs">4.5</p>
+                                </div>
+                                
+                                <p class="text-xs font-bold">Tomato 500 g </p>
                                 <p class="text-xs">$39.99</p>
                             </div>
                         </div>
                         </div>
-
+    
+  
+                        <!-- card 7 -->
                         <div  class="bg-white rounded-xl h-24">
-                            <!-- card 1 -->
                             <div class=" rounded-2xl relative flex gap-6 px-2 py-3">
                                 <div class="flex pl-1">
                                 <!-- white circle -->
                                  <div class="absolute rounded-2xl mt-1 bg-[#EFEBE3] w-16 h-16"></div>
                                 <!-- images -->
                                  <div>
-                                    <img class="relative w-11  top-3 left-3" src="./c2-assets/service.png" alt="">
+                                    <img class="relative w-11  top-3 left-3" src="./c2-assets/onion.png" alt="">
                                 </div>
                             </div> 
                             <!-- text -->
-                            <div class="mt-1">
-                                <i class="fa-solid fa-star text-orange-300 text-xs"></i>
-                                <p class="text-xs">Onion 1 KG</p>
+                            <div class="mt-2">
+                                <div class="flex gap-2">
+                                    <i class="fa-solid fa-star text-orange-300 text-xs"></i>
+                                    <p class="text-xs">4.5</p>
+                                </div>
+                                
+                                <p class="text-xs font-bold">Onion 1 KG</p>
                                 <p class="text-xs">$39.99</p>
                             </div>
                         </div>
                         </div>
-
+    
+  
+                        <!-- card 8 -->
                         <div  class="bg-white rounded-xl h-24">
-                            <!-- card 1 -->
                             <div class=" rounded-2xl relative flex gap-6 px-2 py-3">
                                 <div class="flex pl-1">
                                 <!-- white circle -->
                                  <div class="absolute rounded-2xl mt-1 bg-[#EFEBE3] w-16 h-16"></div>
                                 <!-- images -->
                                  <div>
-                                    <img class="relative w-11  top-3 left-3" src="./c2-assets/service.png" alt="">
+                                    <img class="relative w-11  top-3 left-3" src="./c2-assets/potato.png" alt="">
                                 </div>
                             </div> 
                             <!-- text -->
-                            <div class="mt-1">
-                                <i class="fa-solid fa-star text-orange-300 text-xs"></i>
-                                <p class="text-xs">Onion 1 KG</p>
+                            <div class="mt-2">
+                                <div class="flex gap-2">
+                                    <i class="fa-solid fa-star text-orange-300 text-xs"></i>
+                                    <p class="text-xs">4.5</p>
+                                </div>
+                                
+                                <p class="text-xs font-bold">Potato 1 KG</p>
                                 <p class="text-xs">$39.99</p>
                             </div>
                         </div>
                         </div>
-
-                        <div  class="bg-white rounded-xl h-24">
-                            <!-- card 1 -->
+    
+  
+                        <!-- card 9 -->
+                        <div  class="bg-white rounded-xl h-24 hidden lg:block">
                             <div class=" rounded-2xl relative flex gap-6 px-2 py-3">
                                 <div class="flex pl-1">
                                 <!-- white circle -->
                                  <div class="absolute rounded-2xl mt-1 bg-[#EFEBE3] w-16 h-16"></div>
                                 <!-- images -->
                                  <div>
-                                    <img class="relative w-11  top-3 left-3" src="./c2-assets/service.png" alt="">
+                                    <img class="relative w-11  top-3 left-3" src="./c2-assets/onion.png" alt="">
                                 </div>
                             </div> 
                             <!-- text -->
-                            <div class="mt-1">
-                                <i class="fa-solid fa-star text-orange-300 text-xs"></i>
-                                <p class="text-xs">Onion 1 KG</p>
+                            <div class="mt-2">
+                                <div class="flex gap-2">
+                                    <i class="fa-solid fa-star text-orange-300 text-xs"></i>
+                                    <p class="text-xs">4.5</p>
+                                </div>
+                                
+                                <p class="text-xs font-bold">Onion 1 KG</p>
                                 <p class="text-xs">$39.99</p>
                             </div>
                         </div>
                         </div>
-
-
-
-
-
-
-
-
-
-
                       </div>
                 </div>
             </div>  
           </section>
-
-
-
+    
+    
+    
+          <!-- own section -->
+           <section  class="pt-20 pb-10 mt-10 w-11/12 mx-auto">
+            <h1 class="text-[#179800] text-3xl font-bold mb-10">Healthy </h1>
+            <div
+                class="hero min-h-screen"
+                style="background-image: url(./img/dot.jpg);">
+                <div class="hero-overlay bg-opacity-60"></div>
+                <div class="hero-content text-neutral-content text-center">
+                    <div class="max-w-md">
+                    <h1 class="mb-5 text-5xl font-bold">Pomegranate</h1>
+                    <p class="mb-5">
+                        Pomegranate is a popular and nutritious fruit known for its dark red color and numerous small seeds. This fruit is used in soups, salads, desserts, and juices, and offers various health benefits.
+                    </p>
+                    <button class="btn btn-primary px-5">Next</button>
+                    </div>
+                </div>
+                </div>
+           </section>
+    
+    
+    
           <!-- Arrival & Offers -->
-           <section  class="mt-20 lg:max-w-screen-xl mx-auto mb-">
+           <section  class="mt-20 w-11/12 mx-auto mb-">
             <h1 class="text-[#179800] text-3xl font-bold">Arrival & Offers</h1>
-            <div class="flex justify-between gap-5">
+            <div class="flex justify-between flex-col lg:flex-row gap-5">
                 <div class="w-3/5">
                     <!-- text -->
-                     <div class="bg-[#115414] p-10 mt-10 relative rounded-2xl">
+                     <div class="bg-[#115414] p-10 mt-10 relative rounded-2xl lg:w-full w-[444px]">
                         <div class="mt-28">
                             <button class="btn btn-active btn-accent bg-[#63B76D] text-white border-none">Cook Exotic Dishes</button>
-                            <p class="text-4xl text-white mt-5">UP to <span class="font-bold">20% OFF</span></p>
+                            <p class="text-xl lg:text-4xl text-white mt-5">UP to <span class="font-bold">20% OFF</span></p>
                         </div>
-
-                        <img class="absolute top-10 w-56" src="./c2-assets/dawat-logo.png" alt="">
-                        <img class="absolute top-11 left-2/4 w-72" src="c2-assets/dawat-mock-up.png" alt="">
+    
+                        <img class="absolute top-10 lg:w-56 w-40" src="./c2-assets/dawat-logo.png" alt="">
+                        <img class="absolute lg:top-24 lg:left-96 lg:w-56 w-48 top-28 left-56" src="c2-assets/dawat-mock-up.png" alt="">
                      </div>
                 </div>
                 <div class="w-2/5">
                     <!-- text -->
-                     <div class="bg-[#102861] p-10 mt-10 relative rounded-2xl">
+                     <div class="bg-[#102861] p-10 mt-10 relative rounded-2xl lg:w-full w-[444px]">
                         <div class="mt-28">
                             <button class="btn btn-active btn-accent bg-[#2A4D97] text-white border-none">Cook Exotic Dishes</button>
-                            <p class="text-4xl text-white mt-5">UP to <span class="font-bold">40% OFF</span></p>
+                            <p class="lg:text-3xl text-xl text-white mt-6">UP to <span class="font-bold">40% OFF</span></p>
                         </div>
-
-                        <img class="absolute top-8 w-20" src="./c2-assets/india-gate-logo.png" alt="">
-                        <img class="absolute top-11 left-80 w-40" src="c2-assets/india-gate-mock-up.png" alt="">
+    
+                        <img class="absolute top-8 lg:w-20 w-16" src="./c2-assets/india-gate-logo.png" alt="">
+                        <img class="absolute lg:top-24  lg:left- lg:w-32 w-28 top-28 left-72" src="c2-assets/india-gate-mock-up.png" alt="">
                      </div>
                 </div>
                 </div>
             </div>
            </section>
-
-
-
-
-
-
-           <section>
-            <h1>
-                <p>
-                    
-                </p>
-            </h1>
-           </section>
-
-
+    
+    
+    
+    
+    
+    
     </main>
 
-
     <footer>
-        <section class="flex justify-between bg-[#EFEBE3] p-11 w-4/5 mx-auto relative top-52 rounded-2xl gap-11">
+        <section class="flex justify-between flex-col lg:flex-row bg-[#EFEBE3] p-11 w-4/5 mx-auto relative top-52 rounded-2xl gap-11">
             <!-- img -->
             <div>
                 <img src="./c2-assets/vegetable-busket.png" alt="">
@@ -385,19 +466,19 @@
                 <button class="btn btn-active btn-success bg-[#179800] text-white border-none">Subscribe</button>
             </div>
         </section>
-
+    
         <section class="footer bg-[#179800] text-white p-10 pt-64">
             <nav>
                 <img src="./c2-assets/logo-footer.png" alt="">
                 <p>Stay connected with nature and let its beauty inspire <br> you every day. Embrace the wonders of the <br> earth with creativity and gratitude.</p>
             </nav>
-            <nav class="mt-10 space-y-2">
+            <nav class="lg:mt-10 space-y-2">
             <a class="link link-hover">Product</a>
             <a class="link link-hover">Services</a>
             <a class="link link-hover">Contact us</a>
             </nav>
             <nav>
-            <h6 class="footer-title mt-20">Follow Us</h6>
+            <h6 class="footer-title lg:mt-20">Follow Us</h6>
             <div class="grid grid-flow-col gap-4">
                 <i class="hover:text-gray-200 cursor-pointer fa-brands fa-facebook"></i>
                 <i class="hover:text-gray-200 cursor-pointer fa-brands fa-instagram"></i>
@@ -407,6 +488,8 @@
             </nav>
         </section>
       </footer>
+
+ 
     
 </body>
 </html>
